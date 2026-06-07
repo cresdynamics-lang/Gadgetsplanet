@@ -7,21 +7,36 @@ import { Button } from './ui/Button';
 const slides = [
   {
     id: 1,
-    eyebrow: 'Kenya\'s #1 Tech Destination',
-    title: 'The Future of Premium Tech',
-    description: 'Discover flagship phones, laptops, and accessories — curated for those who demand the best.',
-    cta: 'Shop Now',
-    link: '/shop',
-    img: '/iphone 17 pro max.jpg',
+    eyebrow: "Kenya's #1 Tech Destination · Kitengela",
+    title: 'Premium Phones & Laptops',
+    description: 'Flagship devices with official warranty. Shop online or visit our Kitengela showroom.',
+    cta: 'Shop Laptops',
+    cta2: 'Book a Repair',
+    link: '/category/laptops',
+    link2: '/book-repair',
+    img: '/macbook air m5.jpg',
   },
   {
     id: 2,
-    eyebrow: 'Power Meets Design',
-    title: 'MacBook Pro M5 Series',
-    description: 'Unmatched performance in a stunning form. Built for creators, professionals, and innovators.',
-    cta: 'Explore Laptops',
-    link: '/category/laptops',
-    img: '/macbook air m5.jpg',
+    eyebrow: 'Expert Repair Services',
+    title: 'Fix It Right the First Time',
+    description: 'Screen replacements, motherboard repairs, data recovery — with real-time device tracking.',
+    cta: 'Book a Repair',
+    cta2: 'Track Device',
+    link: '/book-repair',
+    link2: '/track-repair',
+    img: '/iphone 17 pro max.jpg',
+  },
+  {
+    id: 3,
+    eyebrow: 'Free Local Diagnostic',
+    title: 'Drop Off in Kitengela',
+    description: 'Walk in for a free assessment. No fix, no fee. Serving Kitengela, Athi River & Nairobi region.',
+    cta: 'Get Free Diagnostic',
+    cta2: 'Shop Phones',
+    link: '/book-repair',
+    link2: '/category/phones',
+    img: '/iphone 16 pro max.jpg',
   },
 ];
 
@@ -95,7 +110,7 @@ const Hero = () => {
                     </Link>
                   </Button>
                   <Button variant="outline" size="lg" className="rounded-2xl border-white/20 text-white hover:bg-white/10 hover:text-white hover:border-white/40">
-                    <Link to="/category/phones">View Deals</Link>
+                    <Link to={slides[current].link2}>{slides[current].cta2}</Link>
                   </Button>
                 </div>
 

@@ -1,125 +1,105 @@
-import { MapPin, Phone, Mail, Clock, Send } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import { MapPin, Phone, Mail, Clock, Send, MessageCircle } from 'lucide-react';
+import { BUSINESS, whatsappUrl } from '../lib/business';
 
 const Contact = () => {
   return (
-    <div className="bg-white pb-24">
-      {/* Header Section */}
-      <div className="bg-grey-light py-16 mb-12">
+    <div className="bg-background pb-24">
+      <div className="hero-mesh py-16 md:py-20">
         <div className="container">
-          <div className="flex flex-col gap-3">
-            <h1 className="text-[36px] md:text-[48px] font-poppins font-bold text-black tracking-tight leading-tight">
-              Get in Touch
-            </h1>
-            <p className="text-[16px] font-inter text-grey-text max-w-xl">
-              Have questions about our products or need assistance with an order? Our team of tech experts is here to help.
-            </p>
+          <p className="section-eyebrow text-cta">Visit Us in Kitengela</p>
+          <h1 className="font-bodoni text-4xl md:text-5xl font-bold text-white leading-tight">Contact & Location</h1>
+          <p className="font-jost text-white/50 mt-3 max-w-xl text-[15px]">
+            Premium laptop and phone sales & repair services in {BUSINESS.address.city}, Kenya. Drop off your device or get an instant quote.
+          </p>
+          <div className="flex flex-wrap gap-3 mt-6">
+            <a href={whatsappUrl(`Hi! I'd like to visit ${BUSINESS.name} in ${BUSINESS.address.city}.`)} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 bg-[#25D366] text-white px-5 py-3 rounded-2xl font-jost text-[13px] font-bold hover:opacity-90 transition-all">
+              <MessageCircle className="w-4 h-4" /> WhatsApp Us
+            </a>
+            <a href={`tel:${BUSINESS.phoneRaw}`} className="inline-flex items-center gap-2 bg-white text-primary px-5 py-3 rounded-2xl font-jost text-[13px] font-bold hover:bg-cta hover:text-white transition-all">
+              <Phone className="w-4 h-4" /> Call Now
+            </a>
+            <Link to="/book-repair" className="inline-flex items-center gap-2 border border-white/20 text-white px-5 py-3 rounded-2xl font-jost text-[13px] font-semibold hover:bg-white/10 transition-all">
+              Drop Off in {BUSINESS.address.city}
+            </Link>
           </div>
         </div>
       </div>
 
-      <div className="container">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
-          
-          {/* Contact Info */}
-          <div className="space-y-12">
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
-              <div className="p-6 bg-grey-light rounded-xl space-y-4 border border-grey-mid">
-                <div className="w-10 h-10 bg-white rounded-full flex items-center justify-center border border-grey-mid">
-                  <MapPin className="w-5 h-5 text-black" />
+      <div className="container -mt-8 relative z-10">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-start">
+          <div className="space-y-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              {[
+                { icon: MapPin, title: 'Visit Us', content: <>{BUSINESS.address.street}<br />{BUSINESS.address.city}, {BUSINESS.address.country}</> },
+                { icon: Phone, title: 'Call Us', content: <>{BUSINESS.phone}<br />Mon – Sun</> },
+                { icon: Mail, title: 'Email', content: <>{BUSINESS.email}<br />{BUSINESS.supportEmail}</> },
+                { icon: Clock, title: 'Hours', content: <>{BUSINESS.hours.weekdays}<br />{BUSINESS.hours.weekend}</> },
+              ].map((item) => (
+                <div key={item.title} className="bg-white border border-grey-mid/60 rounded-2xl p-5 space-y-3 shadow-card">
+                  <div className="w-10 h-10 bg-cta/10 rounded-xl flex items-center justify-center">
+                    <item.icon className="w-5 h-5 text-cta" />
+                  </div>
+                  <h4 className="font-jost text-[14px] font-bold text-primary">{item.title}</h4>
+                  <p className="text-[13px] text-grey-text font-jost leading-relaxed">{item.content}</p>
                 </div>
-                <div className="space-y-1">
-                  <h4 className="text-[16px] font-poppins font-bold text-black">Visit Us</h4>
-                  <p className="text-[14px] text-grey-text font-inter leading-relaxed">
-                    Gadgets Planet Hub, Westlands<br />Nairobi, Kenya
-                  </p>
-                </div>
-              </div>
-
-              <div className="p-6 bg-grey-light rounded-xl space-y-4 border border-grey-mid">
-                <div className="w-10 h-10 bg-white rounded-full flex items-center justify-center border border-grey-mid">
-                  <Phone className="w-5 h-5 text-black" />
-                </div>
-                <div className="space-y-1">
-                  <h4 className="text-[16px] font-poppins font-bold text-black">Call Us</h4>
-                  <p className="text-[14px] text-grey-text font-inter leading-relaxed">
-                    +254 700 000 000<br />+254 711 000 000
-                  </p>
-                </div>
-              </div>
-
-              <div className="p-6 bg-grey-light rounded-xl space-y-4 border border-grey-mid">
-                <div className="w-10 h-10 bg-white rounded-full flex items-center justify-center border border-grey-mid">
-                  <Mail className="w-5 h-5 text-black" />
-                </div>
-                <div className="space-y-1">
-                  <h4 className="text-[16px] font-poppins font-bold text-black">Email Us</h4>
-                  <p className="text-[14px] text-grey-text font-inter leading-relaxed">
-                    support@gadgetsplanethub.com<br />sales@gadgetsplanethub.com
-                  </p>
-                </div>
-              </div>
-
-              <div className="p-6 bg-grey-light rounded-xl space-y-4 border border-grey-mid">
-                <div className="w-10 h-10 bg-white rounded-full flex items-center justify-center border border-grey-mid">
-                  <Clock className="w-5 h-5 text-black" />
-                </div>
-                <div className="space-y-1">
-                  <h4 className="text-[16px] font-poppins font-bold text-black">Working Hours</h4>
-                  <p className="text-[14px] text-grey-text font-inter leading-relaxed">
-                    Mon - Fri: 8:00 AM - 10:00 PM<br />Sat - Sun: 10:00 AM - 6:00 PM
-                  </p>
-                </div>
-              </div>
+              ))}
             </div>
 
-            {/* Google Maps Placeholder */}
-            <div className="w-full h-[300px] bg-grey-light rounded-xl border border-grey-mid overflow-hidden relative flex items-center justify-center">
-              <MapPin className="w-8 h-8 text-grey-mid absolute" />
-              <p className="text-grey-text font-inter text-[14px] relative z-10">Map View Placeholder</p>
+            <div className="rounded-2xl overflow-hidden border border-grey-mid/60 shadow-card h-[320px]">
+              <iframe
+                title="Gadgets Planet Hub Location"
+                src={BUSINESS.mapsEmbedUrl}
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+              />
             </div>
+            <a href={BUSINESS.googleMapsUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 font-jost text-[13px] font-semibold text-cta hover:underline">
+              <MapPin className="w-4 h-4" /> Get Directions on Google Maps
+            </a>
           </div>
 
-          {/* Contact Form */}
-          <div className="bg-white border border-grey-mid rounded-2xl p-8 md:p-12 shadow-sm">
-            <h2 className="text-[24px] font-poppins font-bold text-black mb-2">Send us a Message</h2>
-            <p className="text-[14px] text-grey-text font-inter mb-10">We'll get back to you as soon as possible.</p>
-            
-            <form className="space-y-6" onSubmit={(e) => e.preventDefault()}>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="bg-white border border-grey-mid/60 rounded-3xl p-8 md:p-10 shadow-card">
+            <h2 className="font-bodoni text-2xl font-bold text-primary mb-2">Send a Message</h2>
+            <p className="font-jost text-[14px] text-grey-text mb-8">Get an instant repair quote for {BUSINESS.serviceArea}.</p>
+
+            <form className="space-y-5" onSubmit={(e) => e.preventDefault()}>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
                 <div className="space-y-2">
-                  <label className="text-[13px] font-bold text-black font-poppins">First Name</label>
-                  <input type="text" placeholder="John" className="w-full bg-grey-light border border-grey-mid rounded-lg px-4 py-3 text-[14px] font-inter outline-none focus:border-black transition-all" />
+                  <label className="font-jost text-[13px] font-bold text-primary">First Name</label>
+                  <input type="text" placeholder="John" className="w-full h-11 bg-grey-light border border-grey-mid rounded-xl px-4 font-jost text-[14px] outline-none focus:border-cta/50" />
                 </div>
                 <div className="space-y-2">
-                  <label className="text-[13px] font-bold text-black font-poppins">Last Name</label>
-                  <input type="text" placeholder="Doe" className="w-full bg-grey-light border border-grey-mid rounded-lg px-4 py-3 text-[14px] font-inter outline-none focus:border-black transition-all" />
+                  <label className="font-jost text-[13px] font-bold text-primary">Last Name</label>
+                  <input type="text" placeholder="Kamau" className="w-full h-11 bg-grey-light border border-grey-mid rounded-xl px-4 font-jost text-[14px] outline-none focus:border-cta/50" />
                 </div>
               </div>
               <div className="space-y-2">
-                <label className="text-[13px] font-bold text-black font-poppins">Email Address</label>
-                <input type="email" placeholder="john@example.com" className="w-full bg-grey-light border border-grey-mid rounded-lg px-4 py-3 text-[14px] font-inter outline-none focus:border-black transition-all" />
+                <label className="font-jost text-[13px] font-bold text-primary">Email</label>
+                <input type="email" placeholder="john@example.com" className="w-full h-11 bg-grey-light border border-grey-mid rounded-xl px-4 font-jost text-[14px] outline-none focus:border-cta/50" />
               </div>
               <div className="space-y-2">
-                <label className="text-[13px] font-bold text-black font-poppins">Subject</label>
-                <select className="w-full bg-grey-light border border-grey-mid rounded-lg px-4 py-3 text-[14px] font-inter outline-none focus:border-black transition-all cursor-pointer">
-                  <option>General Inquiry</option>
+                <label className="font-jost text-[13px] font-bold text-primary">Subject</label>
+                <select className="w-full h-11 bg-grey-light border border-grey-mid rounded-xl px-4 font-jost text-[14px] outline-none focus:border-cta/50 cursor-pointer">
+                  <option>Repair Quote — Kitengela</option>
+                  <option>Product Inquiry</option>
                   <option>Technical Support</option>
                   <option>Sales & Partnerships</option>
-                  <option>Return & Refund</option>
                 </select>
               </div>
               <div className="space-y-2">
-                <label className="text-[13px] font-bold text-black font-poppins">Message</label>
-                <textarea rows={5} placeholder="How can we help you?" className="w-full bg-grey-light border border-grey-mid rounded-lg px-4 py-3 text-[14px] font-inter outline-none focus:border-black transition-all resize-none"></textarea>
+                <label className="font-jost text-[13px] font-bold text-primary">Message</label>
+                <textarea rows={5} placeholder="Describe your device issue or product question..." className="w-full bg-grey-light border border-grey-mid rounded-xl px-4 py-3 font-jost text-[14px] outline-none focus:border-cta/50 resize-none" />
               </div>
-              
-              <button type="submit" className="btn-primary w-full h-12 rounded-lg flex items-center justify-center gap-2 text-[15px] transition-all hover:bg-grey-dark active:scale-[0.98]">
-                Send Message
-                <Send className="w-4 h-4" />
+              <button type="submit" className="btn-primary w-full h-12 rounded-2xl flex items-center justify-center gap-2">
+                Send Message <Send className="w-4 h-4" />
               </button>
             </form>
           </div>
-
         </div>
       </div>
     </div>
@@ -127,4 +107,3 @@ const Contact = () => {
 };
 
 export default Contact;
-

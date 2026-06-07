@@ -4,6 +4,7 @@ import { CartProvider } from './context/CartContext';
 import { CustomerAuthProvider } from './context/CustomerAuthContext';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
+import WhatsAppButton from './components/WhatsAppButton';
 
 // Page Components
 import Home from './pages/Home';
@@ -18,6 +19,9 @@ import AdminLogin from './pages/AdminLogin';
 import AdminDashboard from './pages/AdminDashboard';
 import CustomerSignup from './pages/CustomerSignup';
 import CustomerLogin from './pages/CustomerLogin';
+import RepairServices from './pages/RepairServices';
+import BookRepair from './pages/BookRepair';
+import DeviceTracker from './pages/DeviceTracker';
 
 const AppLayout = ({ children }: { children: React.ReactNode }) => {
   const location = useLocation();
@@ -30,6 +34,7 @@ const AppLayout = ({ children }: { children: React.ReactNode }) => {
         {children}
       </main>
       {!isAdminRoute && <Footer />}
+      {!isAdminRoute && <WhatsAppButton />}
     </div>
   );
 };
@@ -49,6 +54,9 @@ function App() {
               <Route path="/checkout" element={<Checkout />} />
               <Route path="/confirmation" element={<Confirmation />} />
               <Route path="/contact" element={<Contact />} />
+              <Route path="/repairs" element={<RepairServices />} />
+              <Route path="/book-repair" element={<BookRepair />} />
+              <Route path="/track-repair" element={<DeviceTracker />} />
               <Route path="/signup" element={<CustomerSignup />} />
               <Route path="/login" element={<CustomerLogin />} />
               <Route path="/admin" element={<AdminLogin />} />

@@ -17,6 +17,7 @@ interface ProductCardProps {
     isNew?: boolean;
     isSale?: boolean;
     discount?: string;
+    warranty?: string;
   };
 }
 
@@ -70,6 +71,12 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
 
         {product.spec && (
           <p className="text-[11px] font-jost text-grey-text truncate">{product.spec}</p>
+        )}
+
+        {product.warranty && (
+          <span className="inline-flex items-center mt-1 w-fit text-[9px] font-jost font-bold text-accent-green bg-emerald-50 border border-emerald-100 px-2 py-0.5 rounded-full">
+            ✓ {product.warranty}
+          </span>
         )}
 
         <div className="flex items-center gap-1.5 mt-1">

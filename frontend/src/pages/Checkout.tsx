@@ -17,7 +17,7 @@ const Checkout = () => {
     address: "",
     city: "",
     phone: "",
-    paymentMethod: "card",
+    paymentMethod: "mpesa",
   });
 
   const handlePlaceOrder = async (e: React.FormEvent) => {
@@ -117,11 +117,11 @@ const Checkout = () => {
                 </div>
                 <div className="space-y-2 md:col-span-2">
                   <label className="text-[13px] font-bold text-black font-poppins">Street Address</label>
-                  <input type="text" required placeholder="123 Tech Street, Westlands" value={formState.address} onChange={(e) => setFormState((prev) => ({ ...prev, address: e.target.value }))} className="w-full bg-white border border-grey-mid rounded-lg px-4 py-3 text-[14px] font-inter outline-none focus:border-black transition-all" />
+                  <input type="text" required placeholder="Namanga Road, Kitengela" value={formState.address} onChange={(e) => setFormState((prev) => ({ ...prev, address: e.target.value }))} className="w-full bg-white border border-grey-mid rounded-lg px-4 py-3 text-[14px] font-inter outline-none focus:border-black transition-all" />
                 </div>
                 <div className="space-y-2">
                   <label className="text-[13px] font-bold text-black font-poppins">City</label>
-                  <input type="text" required placeholder="Nairobi" value={formState.city} onChange={(e) => setFormState((prev) => ({ ...prev, city: e.target.value }))} className="w-full bg-white border border-grey-mid rounded-lg px-4 py-3 text-[14px] font-inter outline-none focus:border-black transition-all" />
+                  <input type="text" required placeholder="Kitengela" value={formState.city} onChange={(e) => setFormState((prev) => ({ ...prev, city: e.target.value }))} className="w-full bg-white border border-grey-mid rounded-lg px-4 py-3 text-[14px] font-inter outline-none focus:border-black transition-all" />
                 </div>
                 <div className="space-y-2">
                   <label className="text-[13px] font-bold text-black font-poppins">Phone Number</label>
@@ -139,9 +139,9 @@ const Checkout = () => {
               
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
                 {[
-                  { id: 'card', name: 'Credit Card', icon: CreditCard },
                   { id: 'mpesa', name: 'M-Pesa', icon: Smartphone },
-                  { id: 'crypto', name: 'Crypto', icon: Wallet },
+                  { id: 'pesapal', name: 'Pesapal', icon: Wallet },
+                  { id: 'card', name: 'Card', icon: CreditCard },
                 ].map((m) => (
                   <label key={m.id} className="relative block cursor-pointer group">
                     <input type="radio" name="payment" value={m.id} checked={formState.paymentMethod === m.id} onChange={(e) => setFormState((prev) => ({ ...prev, paymentMethod: e.target.value }))} className="peer sr-only" />
