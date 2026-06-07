@@ -1,28 +1,47 @@
-@import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,400..900;1,400..900&family=Jost:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
 @import "tailwindcss";
 
 @theme {
-  --color-primary: #1C1917;
-  --color-secondary: #44403C;
-  --color-cta: #CA8A04;
-  --color-background: #FAFAF9;
-  --color-text: #0C0A09;
-  
+  --color-primary: #09090B;
+  --color-secondary: #52525B;
+  --color-cta: #6366F1;
+  --color-cta-dark: #4F46E5;
+  --color-accent: #8B5CF6;
+  --color-background: #FAFAFA;
+  --color-text: #09090B;
+  --color-surface: #FFFFFF;
+  --color-grey-light: #F4F4F5;
+  --color-grey-mid: #E4E4E7;
+  --color-grey-text: #71717A;
+  --color-grey-dark: #27272A;
+  --color-accent-green: #10B981;
+  --color-accent-red: #EF4444;
+  --color-accent-yellow: #F59E0B;
+
   --font-bodoni: 'Bodoni Moda', serif;
-  --font-jost: 'Jost', sans-serif;
-  
+  --font-jost: 'Plus Jakarta Sans', sans-serif;
+  --font-inter: 'Plus Jakarta Sans', sans-serif;
+  --font-poppins: 'Plus Jakarta Sans', sans-serif;
+
   --breakpoint-xs: 480px;
 
-  --shadow-glass: 0 8px 32px 0 rgba(31, 38, 135, 0.07);
+  --shadow-glass: 0 8px 32px 0 rgba(0, 0, 0, 0.06);
+  --shadow-card: 0 1px 3px rgba(0, 0, 0, 0.04), 0 8px 24px rgba(0, 0, 0, 0.06);
+  --shadow-card-hover: 0 4px 12px rgba(0, 0, 0, 0.06), 0 20px 48px rgba(99, 102, 241, 0.12);
+  --shadow-glow: 0 0 60px rgba(99, 102, 241, 0.25);
 }
 
 @layer base {
   :root {
-    --primary: #1C1917;
-    --secondary: #44403C;
-    --cta: #CA8A04;
-    --background: #FAFAF9;
-    --text: #0C0A09;
+    --primary: #09090B;
+    --secondary: #52525B;
+    --cta: #6366F1;
+    --background: #FAFAFA;
+    --text: #09090B;
+  }
+
+  html {
+    scroll-behavior: smooth;
   }
 
   body {
@@ -30,6 +49,7 @@
     color: var(--text);
     font-family: var(--font-jost);
     -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
     margin: 0;
     overflow-x: hidden;
   }
@@ -37,41 +57,77 @@
   h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-bodoni);
     font-weight: 600;
-    letter-spacing: -0.02em;
+    letter-spacing: -0.03em;
+  }
+
+  ::selection {
+    background-color: #6366F1;
+    color: white;
   }
 }
 
 @layer components {
   .container {
-    @apply max-w-[1440px] mx-auto px-6 md:px-12;
+    @apply max-w-[1440px] mx-auto px-5 md:px-10 lg:px-14;
   }
 
   .glass-card {
-    @apply bg-white/70 backdrop-blur-md border border-white/20 shadow-glass;
+    @apply bg-white/80 backdrop-blur-xl border border-white/40 shadow-glass;
   }
 
   .glass-header {
-    @apply bg-white/60 backdrop-blur-lg border-b border-white/10;
+    @apply bg-white/70 backdrop-blur-xl border-b border-grey-mid/60;
   }
 
   .btn-primary {
-    @apply bg-primary text-white px-8 py-3 rounded-full font-jost font-semibold text-[14px] transition-all hover:bg-cta hover:shadow-lg active:scale-95;
+    @apply bg-primary text-white px-8 py-3 rounded-full font-jost font-semibold text-[14px] transition-all hover:bg-cta hover:shadow-glow active:scale-95;
   }
-  
+
   .btn-secondary {
-    @apply bg-transparent text-primary px-8 py-3 rounded-full font-jost font-semibold text-[14px] transition-all border-2 border-primary hover:bg-primary hover:text-white active:scale-95;
+    @apply bg-transparent text-primary px-8 py-3 rounded-full font-jost font-semibold text-[14px] transition-all border-2 border-primary/20 hover:border-primary hover:bg-primary hover:text-white active:scale-95;
   }
 
   .section-title {
-    @apply font-bodoni text-[32px] md:text-[48px] font-semibold text-primary leading-tight;
+    @apply font-bodoni text-[32px] md:text-[44px] font-semibold text-primary leading-[1.1] tracking-tight;
+  }
+
+  .section-eyebrow {
+    @apply font-jost text-[11px] font-bold text-cta tracking-[0.2em] uppercase mb-3 inline-flex items-center gap-2;
   }
 
   .see-all-link {
-    @apply font-jost text-[14px] font-medium text-cta flex items-center gap-1 hover:gap-2 transition-all;
+    @apply font-jost text-[13px] font-semibold text-cta flex items-center gap-1.5 hover:gap-3 transition-all duration-300;
   }
 
   .product-grid {
-    @apply grid gap-4 md:gap-6 grid-cols-2 md:grid-cols-3 lg:grid-cols-4;
+    @apply grid gap-4 md:gap-5 grid-cols-2 md:grid-cols-3 lg:grid-cols-4;
+  }
+
+  .gradient-text {
+    @apply bg-gradient-to-r from-cta via-accent to-cta bg-clip-text text-transparent;
+  }
+
+  .gradient-border {
+    position: relative;
+    background: linear-gradient(white, white) padding-box,
+                linear-gradient(135deg, #6366F1, #8B5CF6, #6366F1) border-box;
+    border: 1.5px solid transparent;
+  }
+
+  .mesh-bg {
+    background-color: #FAFAFA;
+    background-image:
+      radial-gradient(at 0% 0%, rgba(99, 102, 241, 0.08) 0px, transparent 50%),
+      radial-gradient(at 100% 0%, rgba(139, 92, 246, 0.06) 0px, transparent 50%),
+      radial-gradient(at 50% 100%, rgba(99, 102, 241, 0.04) 0px, transparent 50%);
+  }
+
+  .hero-mesh {
+    background-color: #09090B;
+    background-image:
+      radial-gradient(ellipse 80% 60% at 20% 40%, rgba(99, 102, 241, 0.35) 0%, transparent 60%),
+      radial-gradient(ellipse 60% 50% at 80% 20%, rgba(139, 92, 246, 0.25) 0%, transparent 55%),
+      radial-gradient(ellipse 50% 40% at 60% 80%, rgba(79, 70, 229, 0.15) 0%, transparent 50%);
   }
 }
 
@@ -84,13 +140,29 @@
 }
 
 @keyframes float {
-  0% { transform: translateY(0px); }
-  50% { transform: translateY(-10px); }
-  100% { transform: translateY(0px); }
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-12px); }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
 }
 
 .animate-float {
   animation: float 6s ease-in-out infinite;
 }
 
+.animate-marquee {
+  animation: marquee 30s linear infinite;
+}
 
+.animate-shimmer {
+  background-size: 200% auto;
+  animation: shimmer 3s linear infinite;
+}

@@ -80,14 +80,14 @@ export const registerCustomer = async (req, res, next) => {
     try {
       const welcomeHtml = await loadEmailTemplate("welcome.html");
       const personalizedWelcomeHtml = welcomeHtml.replace(
-        "https://delight.tech/shop",
+        "https://gadgetsplanethub.com/shop",
         `${env.frontendBaseUrl}/shop`,
       );
 
       await sendMail({
         to: customer.email,
-        subject: "Welcome to Delight Tech",
-        text: `Welcome to Delight Tech, ${customer.name}. Explore the collection: ${env.frontendBaseUrl}/shop`,
+        subject: "Welcome to Gadgets Planet Hub",
+        text: `Welcome to Gadgets Planet Hub, ${customer.name}. Explore the collection: ${env.frontendBaseUrl}/shop`,
         html: personalizedWelcomeHtml,
       });
     } catch (mailError) {
@@ -232,7 +232,7 @@ export const requestPasswordReset = async (req, res, next) => {
       const resetUrl = `${env.frontendBaseUrl}/reset-password?token=${encodeURIComponent(rawResetToken)}`;
       const messageText = `Hello ${customer.name || "customer"},
 
-We received a request to reset your Delight Tech account password.
+We received a request to reset your Gadgets Planet Hub account password.
 
 Use this link to reset your password:
 ${resetUrl}
@@ -243,7 +243,7 @@ If you did not request this change, you can safely ignore this email.`;
 
       const messageHtml = `
         <p>Hello ${customer.name || "customer"},</p>
-        <p>We received a request to reset your Delight Tech account password.</p>
+        <p>We received a request to reset your Gadgets Planet Hub account password.</p>
         <p>
           Use this link to reset your password:<br />
           <a href="${resetUrl}">${resetUrl}</a>
@@ -254,7 +254,7 @@ If you did not request this change, you can safely ignore this email.`;
 
       await sendMail({
         to: customer.email,
-        subject: "Delight Tech password reset",
+        subject: "Gadgets Planet Hub password reset",
         text: messageText,
         html: messageHtml,
       });

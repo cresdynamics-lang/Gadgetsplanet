@@ -7,10 +7,9 @@ import TrustSignals from '../components/TrustSignals';
 import Newsletter from '../components/Newsletter';
 import ProductCard from '../components/ProductCard';
 import { Link } from 'react-router-dom';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, Star } from 'lucide-react';
 
 const Home = () => {
-  // Mock data for secondary sections
   const laptopDeals = [
     { id: 'l1', name: 'MacBook Pro M3', price: 245000, img: '/macbook air m5.jpg', brand: 'Apple', spec: '14" / 16GB / 512GB', rating: 5, reviewsCount: 34, isNew: true },
     { id: 'l2', name: 'HP Spectre x360', price: 175000, img: '/lenvovo think pad laptop.jpg', brand: 'HP', spec: 'Intel i7 / 16GB / 1TB', rating: 4, reviewsCount: 18 },
@@ -21,61 +20,47 @@ const Home = () => {
   ];
 
   const sectionVariants: Variants = {
-    hidden: { opacity: 0, y: 40 },
+    hidden: { opacity: 0, y: 32 },
     visible: {
       opacity: 1,
       y: 0,
-      transition: { duration: 0.8, ease: [0.22, 1, 0.36, 1] },
+      transition: { duration: 0.7, ease: [0.22, 1, 0.36, 1] },
     },
   };
 
   return (
-    <div className="flex flex-col gap-24 pb-24">
+    <div className="flex flex-col gap-16 md:gap-20 pb-16 mesh-bg">
       <Hero />
-      
-      <motion.div
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, margin: "-100px" }}
-        variants={sectionVariants}
-      >
+
+      <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, margin: '-80px' }} variants={sectionVariants}>
         <Categories />
       </motion.div>
 
-      <motion.div
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, margin: "-100px" }}
-        variants={sectionVariants}
-      >
+      <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, margin: '-80px' }} variants={sectionVariants}>
         <TrustSignals />
       </motion.div>
-      
-      <motion.div
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, margin: "-100px" }}
-        variants={sectionVariants}
-      >
+
+      <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, margin: '-80px' }} variants={sectionVariants}>
         <FeaturedProducts />
       </motion.div>
 
-      {/* Flagship Deals Section */}
-      <motion.section 
+      {/* Flagship Laptops */}
+      <motion.section
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: true, margin: "-100px" }}
+        viewport={{ once: true, margin: '-80px' }}
         variants={sectionVariants}
         className="container"
       >
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-8 gap-4">
           <div>
-            <p className="font-jost text-sm font-bold text-cta tracking-widest uppercase mb-2">Editor's Choice</p>
-            <h2 className="section-title">Flagship Laptops</h2>
+            <p className="section-eyebrow">Editor's Choice</p>
+            <h2 className="section-title">
+              Flagship <span className="gradient-text">Laptops</span>
+            </h2>
           </div>
-          <Link to="/category/laptops" className="see-all-link group">
-            Browse All Laptops
-            <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+          <Link to="/category/laptops" className="see-all-link">
+            Browse All Laptops <ArrowRight className="w-4 h-4" />
           </Link>
         </div>
         <div className="product-grid">
@@ -85,43 +70,48 @@ const Home = () => {
         </div>
       </motion.section>
 
-      {/* Promotional Banner Strip */}
-      <motion.section 
+      {/* Promo banner */}
+      <motion.section
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: true, margin: "-100px" }}
+        viewport={{ once: true, margin: '-80px' }}
         variants={sectionVariants}
         className="container"
       >
-        <div className="w-full h-[300px] md:h-[400px] glass-card rounded-[40px] flex items-center overflow-hidden relative group">
-          <div className="absolute inset-0 bg-gradient-to-r from-primary to-primary/40 z-10" />
-          <div className="relative z-20 p-12 md:p-20 space-y-6 max-w-2xl text-white">
-            <h3 className="font-bodoni text-4xl md:text-6xl font-bold leading-tight">Think Different. <br/>Think Delight.</h3>
-            <p className="font-jost text-lg opacity-80">Explore the full range of the Apple ecosystem, curated for excellence.</p>
-            <Link 
-              to="/category/phones" 
-              className="inline-flex items-center gap-3 bg-white text-primary px-8 py-4 rounded-full font-bold hover:bg-cta hover:text-white transition-all shadow-xl active:scale-95"
+        <div className="relative w-full min-h-[320px] md:min-h-[400px] rounded-3xl overflow-hidden group">
+          <div className="absolute inset-0 hero-mesh" />
+          <div className="absolute inset-0 bg-gradient-to-r from-primary via-primary/90 to-transparent z-10" />
+
+          <div className="relative z-20 p-10 md:p-16 flex flex-col justify-center max-w-xl space-y-6">
+            <div className="inline-flex items-center gap-2 w-fit rounded-full border border-white/10 bg-white/5 px-4 py-1.5">
+              <Star className="w-3.5 h-3.5 text-accent-yellow fill-accent-yellow" />
+              <span className="font-jost text-[11px] font-bold text-white/70 uppercase tracking-wider">#1 in Kenya</span>
+            </div>
+            <h3 className="font-bodoni text-4xl md:text-5xl font-bold leading-tight text-white">
+              Think Different.<br />
+              <span className="gradient-text">Think Gadgets Planet Hub.</span>
+            </h3>
+            <p className="font-jost text-base text-white/50 leading-relaxed">
+              Explore the full Apple ecosystem and premium tech — curated, genuine, and delivered to your door.
+            </p>
+            <Link
+              to="/category/phones"
+              className="inline-flex items-center gap-3 w-fit bg-white text-primary px-7 py-3.5 rounded-2xl font-jost font-bold text-[14px] hover:bg-cta hover:text-white transition-all shadow-glow active:scale-95"
             >
               Explore Now
-              <ArrowRight className="w-5 h-5" />
+              <ArrowRight className="w-4 h-4" />
             </Link>
           </div>
-          <motion.img 
-            whileHover={{ scale: 1.05 }}
-            transition={{ duration: 1 }}
-            src="/iphone 17 pro max.jpg" 
-            alt="Apple" 
-            className="h-[120%] object-contain absolute right-[-100px] bottom-[-100px] rotate-[-15deg] z-0 opacity-50 group-hover:opacity-100 transition-opacity" 
+
+          <img
+            src="/iphone 17 pro max.jpg"
+            alt="Featured product"
+            className="absolute right-[-60px] md:right-0 bottom-[-80px] md:bottom-[-60px] h-[110%] md:h-[130%] object-contain z-0 opacity-40 md:opacity-70 group-hover:opacity-90 transition-opacity duration-700 pointer-events-none"
           />
         </div>
       </motion.section>
 
-      <motion.div
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, margin: "-100px" }}
-        variants={sectionVariants}
-      >
+      <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, margin: '-80px' }} variants={sectionVariants}>
         <Newsletter />
       </motion.div>
     </div>
@@ -129,5 +119,3 @@ const Home = () => {
 };
 
 export default Home;
-
-

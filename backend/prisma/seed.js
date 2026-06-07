@@ -36,8 +36,8 @@ async function main() {
 
   await prisma.storeSetting.create({
     data: {
-      storeName: 'Delight Tech',
-      contactEmail: 'info@delighttech.co.ke',
+      storeName: 'Gadgets Planet Hub',
+      contactEmail: 'info@gadgetsplanethub.com',
       contactPhone: '+254 700 000 000',
       deliveryFee: 500,
       freeShippingThreshold: 50000,

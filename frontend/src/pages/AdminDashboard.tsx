@@ -82,8 +82,8 @@ const AdminDashboard = () => {
     if (saved) return JSON.parse(saved);
     return {
       name: session?.admin?.name || "Admin User",
-      email: session?.admin?.email || "admin@delight-tech.com",
-      avatar: "https://api.dicebear.com/7.x/bottts/svg?seed=delight",
+      email: session?.admin?.email || "admin@gadgetsplanethub.com",
+      avatar: "https://api.dicebear.com/7.x/bottts/svg?seed=gadgetsplanethub",
       role: (session as any)?.admin?.role || "Manager",
     };
   });
@@ -236,7 +236,7 @@ const AdminDashboard = () => {
           </div>
           {!sidebarCollapsed && (
             <h2 className={`text-lg font-bodoni font-bold tracking-tight ${isDarkMode ? "text-white" : "text-black"}`}>
-              Delight<span className="text-cta"> Admin</span>
+              Gadgets Planet Hub<span className="text-cta"> Admin</span>
             </h2>
           )}
         </div>

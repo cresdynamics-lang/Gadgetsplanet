@@ -4,7 +4,7 @@ import { prisma } from "../config/prisma.js";
 const router = Router();
 
 router.get("/", (_req, res) => {
-  res.send("Delight-Tech Backend is running!");
+  res.send("Gadgets Planet Hub Backend is running!");
 });
 
 router.get("/api/status", async (_req, res, next) => {

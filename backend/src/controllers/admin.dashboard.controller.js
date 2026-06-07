@@ -433,11 +433,11 @@ export const putAdminStoreSettings = async (req, res, next) => {
     if (!row) {
       row = await prisma.storeSetting.create({
         data: {
-          storeName: payload.storeName || "Delight Tech",
+          storeName: payload.storeName || "Gadgets Planet Hub",
           logoUrl: payload.logoUrl || null,
           currency: payload.currency || "KES",
           timezone: payload.timezone || "Africa/Nairobi",
-          contactEmail: payload.contactEmail || "info@delighttech.co.ke",
+          contactEmail: payload.contactEmail || "info@gadgetsplanethub.com",
           contactPhone: payload.contactPhone || "+254700000000",
           deliveryFee: Number(payload.deliveryFee) || 0,
           freeShippingThreshold: payload.freeShippingThreshold != null ? Number(payload.freeShippingThreshold) : null,

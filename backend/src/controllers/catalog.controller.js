@@ -128,7 +128,7 @@ export const createOrder = async (req, res, next) => {
     try {
       const orderTemplate = await loadEmailTemplate("order-confirmation.html");
       const html = renderTemplate(
-        orderTemplate.replace("https://delight.tech/account", `${env.frontendBaseUrl}/confirmation`),
+        orderTemplate.replace("https://gadgetsplanethub.com/account", `${env.frontendBaseUrl}/confirmation`),
         { orderNumber: order.orderNumber },
       );
       await sendMail({

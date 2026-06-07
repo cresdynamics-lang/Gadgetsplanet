@@ -24,7 +24,7 @@ const AppLayout = ({ children }: { children: React.ReactNode }) => {
   const isAdminRoute = location.pathname.startsWith('/admin');
 
   return (
-    <div className="min-h-screen flex flex-col selection:bg-black selection:text-white">
+    <div className="min-h-screen flex flex-col bg-background">
       {!isAdminRoute && <Navbar />}
       <main className="flex-grow">
         {children}

@@ -51,7 +51,7 @@ const AdminLogin = () => {
                 type="email" 
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                placeholder="admin@delight.tech" 
+                placeholder="admin@gadgetsplanethub.com" 
                 required 
                 className="w-full bg-grey-light border border-grey-mid rounded-lg pl-11 pr-4 py-3 text-[14px] font-inter outline-none focus:border-black transition-all" 
               />

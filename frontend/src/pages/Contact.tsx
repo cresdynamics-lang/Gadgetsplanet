@@ -30,7 +30,7 @@ const Contact = () => {
                 <div className="space-y-1">
                   <h4 className="text-[16px] font-poppins font-bold text-black">Visit Us</h4>
                   <p className="text-[14px] text-grey-text font-inter leading-relaxed">
-                    Delight Plaza, 4th Floor<br />Westlands, Nairobi, Kenya
+                    Gadgets Planet Hub, Westlands<br />Nairobi, Kenya
                   </p>
                 </div>
               </div>
@@ -54,7 +54,7 @@ const Contact = () => {
                 <div className="space-y-1">
                   <h4 className="text-[16px] font-poppins font-bold text-black">Email Us</h4>
                   <p className="text-[14px] text-grey-text font-inter leading-relaxed">
-                    support@delight.tech<br />sales@delight.tech
+                    support@gadgetsplanethub.com<br />sales@gadgetsplanethub.com
                   </p>
                 </div>
               </div>

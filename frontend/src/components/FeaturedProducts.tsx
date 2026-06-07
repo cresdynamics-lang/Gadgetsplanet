@@ -1,5 +1,5 @@
-
 import { Link } from 'react-router-dom';
+import { ArrowRight, Timer } from 'lucide-react';
 import ProductCard from './ProductCard';
 
 const products = [
@@ -13,7 +13,7 @@ const products = [
     spec: '256GB / 12GB RAM / Titanium',
     rating: 5,
     reviewsCount: 124,
-    isNew: true
+    isNew: true,
   },
   {
     id: 'p2',
@@ -26,7 +26,7 @@ const products = [
     rating: 5,
     reviewsCount: 86,
     isSale: true,
-    discount: '-11%'
+    discount: '-11%',
   },
   {
     id: 'p3',
@@ -36,7 +36,7 @@ const products = [
     brand: 'Lenovo',
     spec: 'Intel i7 / 32GB RAM / 1TB SSD',
     rating: 4,
-    reviewsCount: 42
+    reviewsCount: 42,
   },
   {
     id: 'p4',
@@ -48,7 +48,7 @@ const products = [
     spec: '128GB / 8GB RAM / Natural Titanium',
     rating: 5,
     reviewsCount: 512,
-    isSale: true
+    isSale: true,
   },
   {
     id: 'p5',
@@ -58,7 +58,7 @@ const products = [
     brand: 'Samsung',
     spec: '256GB / 12GB RAM / Titanium Black',
     rating: 5,
-    reviewsCount: 89
+    reviewsCount: 89,
   },
   {
     id: 'p6',
@@ -69,21 +69,29 @@ const products = [
     spec: 'M4 Chip / 11" Display / 256GB',
     rating: 5,
     reviewsCount: 67,
-    isNew: true
+    isNew: true,
   },
 ];
 
 const FeaturedProducts = () => {
   return (
-    <section className="py-8 bg-white">
+    <section className="py-4">
       <div className="container">
-        {/* Section Header */}
-        <div className="flex items-center justify-between mb-4">
-          <h2 className="section-title">Flash Deals</h2>
-          <Link to="/shop" className="see-all-link">See All →</Link>
+        <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-8 gap-4">
+          <div>
+            <div className="section-eyebrow">
+              <Timer className="w-3.5 h-3.5" />
+              Limited Time
+            </div>
+            <h2 className="section-title">
+              Flash <span className="gradient-text">Deals</span>
+            </h2>
+          </div>
+          <Link to="/shop" className="see-all-link">
+            See All Deals <ArrowRight className="w-4 h-4" />
+          </Link>
         </div>
 
-        {/* Product Grid */}
         <div className="product-grid">
           {products.map((product) => (
             <ProductCard key={product.id} product={product} />
@@ -95,4 +103,3 @@ const FeaturedProducts = () => {
 };
 
 export default FeaturedProducts;
-

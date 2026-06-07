@@ -142,11 +142,11 @@ model OrderItem {
 
 model StoreSetting {
   id                    Int      @id @default(autoincrement())
-  storeName             String   @default("Delight Tech")
+  storeName             String   @default("Gadgets Planet Hub")
   logoUrl               String?
   currency              String   @default("KES")
   timezone              String   @default("Africa/Nairobi")
-  contactEmail          String   @default("info@delighttech.co.ke")
+  contactEmail          String   @default("info@gadgetsplanethub.com")
   contactPhone          String   @default("+254700000000")
   deliveryFee           Float    @default(0)
   freeShippingThreshold Float?

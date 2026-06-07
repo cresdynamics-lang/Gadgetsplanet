@@ -38,7 +38,7 @@ const Header: React.FC = () => {
               <div className="w-4 h-4 border-2 border-white rounded-sm rotate-45" />
             </motion.div>
             <span className="font-bodoni text-2xl font-bold tracking-tight text-primary">
-              DELIGHT
+              GADGETS PLANET HUB
             </span>
           </Link>
 
