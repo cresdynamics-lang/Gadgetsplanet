@@ -41,7 +41,7 @@ const RepairServices = () => {
           {[
             { icon: ShieldCheck, title: 'No Fix, No Fee', desc: 'You only pay if we solve the problem' },
             { icon: BadgeCheck, title: 'Certified Technicians', desc: 'Trained on Apple, Samsung & premium brands' },
-            { icon: Clock, title: 'Same-Day Diagnostics', desc: 'Free assessment at our Kitengela shop' },
+            { icon: Clock, title: 'Same-Day Diagnostics', desc: 'Free assessment at Accra Plaza, Nairobi CBD' },
           ].map((item) => (
             <div key={item.title} className="bg-white border border-grey-mid/60 rounded-2xl p-6 flex items-start gap-4 shadow-card">
               <div className="w-11 h-11 rounded-xl bg-cta/10 flex items-center justify-center shrink-0">
@@ -100,9 +100,9 @@ const RepairServices = () => {
               ))}
             </div>
             <p className="font-jost text-[15px] text-white/80 leading-relaxed italic">
-              "Dropped my MacBook for a screen repair in Kitengela. Got WhatsApp updates throughout and picked it up the next day. Professional service!"
+              "Dropped my MacBook for a screen repair at Accra Plaza. Got WhatsApp updates throughout and picked it up the next day. Professional service!"
             </p>
-            <p className="font-jost text-[13px] font-bold text-white mt-4">— Sarah K., Kitengela</p>
+            <p className="font-jost text-[13px] font-bold text-white mt-4">— Sarah K., Nairobi CBD</p>
             <div className="mt-8 pt-6 border-t border-white/10">
               <p className="font-jost text-[12px] text-white/40 uppercase tracking-wider mb-2">Service Area</p>
               <p className="font-jost text-[14px] text-white/70">{BUSINESS.serviceArea}</p>

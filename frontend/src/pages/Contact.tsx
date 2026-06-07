@@ -12,7 +12,7 @@ const Contact = () => {
           <p className="section-eyebrow text-cta">{BUSINESS.slogan}</p>
           <h1 className="font-bodoni text-4xl md:text-5xl font-bold text-white leading-tight">Contact & Location</h1>
           <p className="font-jost text-white/50 mt-3 max-w-xl text-[15px]">
-            {BUSINESS.tagline}. Visit us in {BUSINESS.address.city}, Kenya — sales, repairs, spares & accessories.
+            {BUSINESS.tagline}. Visit us at {BUSINESS.address.full} — sales, repairs, spares & accessories.
           </p>
           <div className="flex flex-wrap gap-3 mt-6">
             <a href={whatsappUrl(`Hi ${BUSINESS.name}! I'd like to enquire about phones, laptops or repairs.`)} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 bg-[#25D366] text-white px-5 py-3 rounded-2xl font-jost text-[13px] font-bold hover:opacity-90 transition-all">
@@ -22,7 +22,7 @@ const Contact = () => {
               <Phone className="w-4 h-4" /> {BUSINESS.phone}
             </a>
             <Link to="/book-repair" className="inline-flex items-center gap-2 border border-white/20 text-white px-5 py-3 rounded-2xl font-jost text-[13px] font-semibold hover:bg-white/10 transition-all">
-              Drop Off in {BUSINESS.address.city}
+              Drop Off at Accra Plaza
             </Link>
           </div>
         </div>
@@ -33,7 +33,7 @@ const Contact = () => {
           <div className="space-y-6">
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {[
-                { icon: MapPin, title: 'Visit Us', content: <>{BUSINESS.address.street}<br />{BUSINESS.address.city}, {BUSINESS.address.country}</> },
+                { icon: MapPin, title: 'Visit Us', content: <>{BUSINESS.address.street}<br />{BUSINESS.address.area}, {BUSINESS.address.country}</> },
                 { icon: Phone, title: 'Call / WhatsApp', content: <>{BUSINESS.phone}<br />{BUSINESS.phoneDisplay}</> },
                 { icon: Mail, title: 'Email', content: <>{BUSINESS.email}</> },
                 { icon: Clock, title: 'Hours', content: <>{BUSINESS.hours.weekdays}<br />{BUSINESS.hours.weekend}</> },
@@ -87,7 +87,7 @@ const Contact = () => {
               <div className="space-y-2">
                 <label className="font-jost text-[13px] font-bold text-primary">Subject</label>
                 <select className="w-full h-11 bg-grey-light border border-grey-mid rounded-xl px-4 font-jost text-[14px] outline-none focus:border-cta/50 cursor-pointer">
-                  <option>Repair Quote — Kitengela</option>
+                  <option>Repair Quote — Nairobi CBD</option>
                   <option>Product Inquiry</option>
                   <option>Technical Support</option>
                   <option>Sales & Partnerships</option>

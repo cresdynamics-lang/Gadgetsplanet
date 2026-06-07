@@ -117,11 +117,11 @@ const Checkout = () => {
                 </div>
                 <div className="space-y-2 md:col-span-2">
                   <label className="text-[13px] font-bold text-black font-poppins">Street Address</label>
-                  <input type="text" required placeholder="Namanga Road, Kitengela" value={formState.address} onChange={(e) => setFormState((prev) => ({ ...prev, address: e.target.value }))} className="w-full bg-white border border-grey-mid rounded-lg px-4 py-3 text-[14px] font-inter outline-none focus:border-black transition-all" />
+                  <input type="text" required placeholder="Accra Plaza, Nairobi CBD" value={formState.address} onChange={(e) => setFormState((prev) => ({ ...prev, address: e.target.value }))} className="w-full bg-white border border-grey-mid rounded-lg px-4 py-3 text-[14px] font-inter outline-none focus:border-black transition-all" />
                 </div>
                 <div className="space-y-2">
                   <label className="text-[13px] font-bold text-black font-poppins">City</label>
-                  <input type="text" required placeholder="Kitengela" value={formState.city} onChange={(e) => setFormState((prev) => ({ ...prev, city: e.target.value }))} className="w-full bg-white border border-grey-mid rounded-lg px-4 py-3 text-[14px] font-inter outline-none focus:border-black transition-all" />
+                  <input type="text" required placeholder="Nairobi" value={formState.city} onChange={(e) => setFormState((prev) => ({ ...prev, city: e.target.value }))} className="w-full bg-white border border-grey-mid rounded-lg px-4 py-3 text-[14px] font-inter outline-none focus:border-black transition-all" />
                 </div>
                 <div className="space-y-2">
                   <label className="text-[13px] font-bold text-black font-poppins">Phone Number</label>

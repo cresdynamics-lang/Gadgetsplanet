@@ -98,7 +98,7 @@ const Home = () => {
               <Wrench className="w-3.5 h-3.5" /> Repairs
             </p>
             <h3 className="font-bodoni text-2xl font-bold text-white mt-2">Book a Repair</h3>
-            <p className="font-jost text-[13px] text-white/50 mt-2">Free diagnostic in Kitengela. Track your device status online.</p>
+            <p className="font-jost text-[13px] text-white/50 mt-2">Free diagnostic at Accra Plaza, Nairobi CBD. Track your device online.</p>
             <span className="inline-flex items-center gap-2 mt-4 font-jost text-[13px] font-bold text-white group-hover:gap-3 transition-all">
               Book Appointment <ArrowRight className="w-4 h-4" />
             </span>
@@ -128,7 +128,7 @@ const Home = () => {
               <span className="gradient-text">Your Everyday Phone Garage.</span>
             </h3>
             <p className="font-jost text-base text-white/50 leading-relaxed">
-              {BUSINESS.tagline}. Visit us in Kitengela or shop online.
+              {BUSINESS.tagline}. Visit us at Accra Plaza, Nairobi CBD or shop online.
             </p>
             <Link
               to="/category/phones"

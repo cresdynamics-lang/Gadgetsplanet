@@ -61,7 +61,7 @@ const Footer = () => {
                 { to: '/repairs', label: 'Repair Services' },
                 { to: '/book-repair', label: 'Book a Repair' },
                 { to: '/track-repair', label: 'Device Tracker' },
-                { to: '/contact', label: 'Drop Off in Kitengela' },
+                { to: '/contact', label: 'Visit Accra Plaza, CBD' },
               ].map((link) => (
                 <li key={link.to}>
                   <Link to={link.to} className="text-white/50 hover:text-white transition-colors">{link.label}</Link>
