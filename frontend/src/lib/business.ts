@@ -1,11 +1,15 @@
 export const BUSINESS = {
   name: 'Gadgets Planet Hub',
-  tagline: "Kenya's #1 Premium Tech & Repair Store",
-  phone: '+254 712 345 678',
-  phoneRaw: '254712345678',
-  whatsapp: '254712345678',
-  email: 'hello@gadgetsplanethub.com',
-  supportEmail: 'support@gadgetsplanethub.com',
+  slogan: "Your Everyday's Phone Garage",
+  tagline: 'Dealers in smartphones, iPhones, laptops, MacBooks, repairs, spares & accessories',
+  description:
+    "Gadgets Planet Hub — your everyday's phone garage. Dealers in smartphones, iPhones, laptops, MacBooks, repairs, spares and accessories in Kitengela, Kenya.",
+  phone: '0711 106 949',
+  phoneDisplay: '+254 711 106 949',
+  phoneRaw: '254711106949',
+  whatsapp: '254711106949',
+  email: 'mauricemaina77@gmail.com',
+  supportEmail: 'mauricemaina77@gmail.com',
   address: {
     street: 'Namanga Road, Kitengela Town',
     city: 'Kitengela',

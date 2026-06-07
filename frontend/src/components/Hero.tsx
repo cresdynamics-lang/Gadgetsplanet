@@ -3,13 +3,14 @@ import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowRight, ChevronLeft, ChevronRight, Trophy, Zap } from 'lucide-react';
 import { Button } from './ui/Button';
+import { BUSINESS } from '../lib/business';
 
 const slides = [
   {
     id: 1,
-    eyebrow: "Kenya's #1 Tech Destination · Kitengela",
-    title: 'Premium Phones & Laptops',
-    description: 'Flagship devices with official warranty. Shop online or visit our Kitengela showroom.',
+    eyebrow: BUSINESS.slogan,
+    title: 'Smartphones, iPhones & MacBooks',
+    description: BUSINESS.tagline + '. Shop premium devices or book expert repairs in Kitengela.',
     cta: 'Shop Laptops',
     cta2: 'Book a Repair',
     link: '/category/laptops',
@@ -83,11 +84,11 @@ const Hero = () => {
                 <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 backdrop-blur-md px-4 py-2">
                   <Trophy className="w-4 h-4 text-cta" />
                   <span className="font-jost text-[11px] font-bold uppercase tracking-widest text-white/80">
-                    #1 Rated in Kenya
+                    {BUSINESS.slogan}
                   </span>
                   <span className="h-1 w-1 rounded-full bg-cta" />
                   <Zap className="w-3.5 h-3.5 text-accent-yellow" />
-                  <span className="font-jost text-[11px] font-semibold text-white/60">10K+ Happy Customers</span>
+                  <span className="font-jost text-[11px] font-semibold text-white/60">{BUSINESS.phone}</span>
                 </div>
 
                 <p className="font-jost text-xs font-bold tracking-[0.25em] text-cta uppercase">
@@ -117,9 +118,9 @@ const Hero = () => {
                 {/* Quick stats */}
                 <div className="flex flex-wrap gap-6 pt-4 border-t border-white/10">
                   {[
-                    { value: '500+', label: 'Products' },
-                    { value: '100%', label: 'Genuine' },
-                    { value: '24/7', label: 'Support' },
+                    { value: 'iPhones', label: 'Smartphones' },
+                    { value: 'MacBooks', label: 'Laptops' },
+                    { value: 'Repairs', label: 'Spares & More' },
                   ].map((stat) => (
                     <div key={stat.label}>
                       <p className="font-bodoni text-2xl font-bold text-white">{stat.value}</p>

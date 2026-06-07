@@ -74,7 +74,7 @@ const BookRepair = () => {
             </div>
             <div className="space-y-2">
               <label className="font-jost text-[13px] font-bold text-primary">Phone Number *</label>
-              <input required type="tel" value={form.customerPhone} onChange={(e) => setForm({ ...form, customerPhone: e.target.value })} className="w-full h-11 bg-grey-light border border-grey-mid rounded-xl px-4 font-jost text-[14px] outline-none focus:border-cta/50 focus:ring-2 focus:ring-cta/10" placeholder="+254 712 345 678" />
+              <input required type="tel" value={form.customerPhone} onChange={(e) => setForm({ ...form, customerPhone: e.target.value })} className="w-full h-11 bg-grey-light border border-grey-mid rounded-xl px-4 font-jost text-[14px] outline-none focus:border-cta/50 focus:ring-2 focus:ring-cta/10" placeholder="0711 106 949" />
             </div>
           </div>
 

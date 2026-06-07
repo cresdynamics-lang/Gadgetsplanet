@@ -9,6 +9,7 @@ import Newsletter from '../components/Newsletter';
 import ProductCard from '../components/ProductCard';
 import { Link } from 'react-router-dom';
 import { ArrowRight, Star, Wrench } from 'lucide-react';
+import { BUSINESS } from '../lib/business';
 
 const Home = () => {
   const laptopDeals = [
@@ -120,14 +121,14 @@ const Home = () => {
           <div className="relative z-20 p-10 md:p-16 flex flex-col justify-center max-w-xl space-y-6">
             <div className="inline-flex items-center gap-2 w-fit rounded-full border border-white/10 bg-white/5 px-4 py-1.5">
               <Star className="w-3.5 h-3.5 text-accent-yellow fill-accent-yellow" />
-              <span className="font-jost text-[11px] font-bold text-white/70 uppercase tracking-wider">#1 in Kenya</span>
+              <span className="font-jost text-[11px] font-bold text-white/70 uppercase tracking-wider">{BUSINESS.slogan}</span>
             </div>
             <h3 className="font-bodoni text-4xl md:text-5xl font-bold leading-tight text-white">
-              Think Different.<br />
-              <span className="gradient-text">Think Gadgets Planet Hub.</span>
+              Gadgets Planet Hub.<br />
+              <span className="gradient-text">Your Everyday Phone Garage.</span>
             </h3>
             <p className="font-jost text-base text-white/50 leading-relaxed">
-              Explore the full Apple ecosystem and premium tech — curated, genuine, and delivered to your door.
+              {BUSINESS.tagline}. Visit us in Kitengela or shop online.
             </p>
             <Link
               to="/category/phones"

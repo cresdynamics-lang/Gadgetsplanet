@@ -3,6 +3,7 @@ import { Link, useNavigate, useLocation, useSearchParams } from 'react-router-do
 import { useCart } from '../context/CartContext';
 import { Search, Heart, ShoppingBag, User, Menu, X, Sparkles, Wrench } from 'lucide-react';
 import { useCustomerAuth } from '../context/CustomerAuthContext';
+import { BUSINESS } from '../lib/business';
 
 const Navbar = () => {
   const { cartCount } = useCart();
@@ -85,10 +86,10 @@ const Navbar = () => {
         <div className="container relative flex h-9 items-center justify-between">
           <div className="hidden sm:flex items-center gap-1.5 text-[11px] font-jost font-semibold">
             <Sparkles className="w-3 h-3 text-cta" />
-            <span className="text-white/90">Free Diagnostic in Kitengela</span>
+            <span className="text-white/90">{BUSINESS.slogan}</span>
           </div>
           <p className="flex-1 text-center text-[11px] font-jost font-medium tracking-wide text-white/80 sm:flex-none">
-            Premium phones, laptops & repairs · Kitengela & Nairobi
+            Smartphones · iPhones · Laptops · MacBooks · Repairs · Spares
           </p>
           <div className="hidden sm:flex items-center gap-4">
             {isAuthenticated ? (
@@ -109,7 +110,7 @@ const Navbar = () => {
             </div>
             <div className="hidden sm:block">
               <span className="block font-bodoni text-[17px] font-bold leading-none tracking-tight text-primary">Gadgets Planet</span>
-              <span className="block font-jost text-[9px] font-bold uppercase tracking-[0.25em] text-cta">Hub</span>
+              <span className="block font-jost text-[8px] font-bold uppercase tracking-[0.15em] text-cta leading-tight">Your Phone Garage</span>
             </div>
           </Link>
 

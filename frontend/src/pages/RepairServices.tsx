@@ -1,5 +1,7 @@
 import { Link } from 'react-router-dom';
 import { ArrowRight, ShieldCheck, Wrench, Clock, BadgeCheck, Star } from 'lucide-react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faWhatsapp } from '@fortawesome/free-brands-svg-icons';
 import { REPAIR_SERVICES } from '../lib/repairs';
 import { BUSINESS, whatsappUrl } from '../lib/business';
 
@@ -8,12 +10,12 @@ const RepairServices = () => {
     <div className="pb-24 mesh-bg">
       <div className="hero-mesh py-16 md:py-24">
         <div className="container">
-          <p className="section-eyebrow text-cta">Certified Technicians · No Fix, No Fee</p>
+          <p className="section-eyebrow text-cta">{BUSINESS.slogan}</p>
           <h1 className="font-bodoni text-4xl md:text-5xl font-bold text-white leading-tight max-w-2xl">
-            Expert Phone & Laptop Repair in {BUSINESS.address.city}
+            Repairs, Spares & Accessories in {BUSINESS.address.city}
           </h1>
           <p className="font-jost text-base text-white/50 mt-4 max-w-xl leading-relaxed">
-            Premium repair services for high-end devices. Screen replacements, motherboard repairs, data recovery, and more — with real-time status tracking.
+            {BUSINESS.tagline}. Screen replacements, motherboard repairs, data recovery — with real-time tracking.
           </p>
           <div className="flex flex-wrap gap-3 mt-8">
             <Link to="/book-repair" className="inline-flex items-center gap-2 bg-white text-primary px-6 py-3.5 rounded-2xl font-jost font-bold text-[14px] hover:bg-cta hover:text-white transition-all">
@@ -28,7 +30,7 @@ const RepairServices = () => {
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 bg-[#25D366] text-white px-6 py-3.5 rounded-2xl font-jost font-semibold text-[14px] hover:opacity-90 transition-all"
             >
-              Get Instant Quote
+              <FontAwesomeIcon icon={faWhatsapp} className="w-4 h-4" /> Get Instant Quote
             </a>
           </div>
         </div>

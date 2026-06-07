@@ -125,7 +125,7 @@ const Checkout = () => {
                 </div>
                 <div className="space-y-2">
                   <label className="text-[13px] font-bold text-black font-poppins">Phone Number</label>
-                  <input type="tel" required placeholder="+254 700 000 000" value={formState.phone} onChange={(e) => setFormState((prev) => ({ ...prev, phone: e.target.value }))} className="w-full bg-white border border-grey-mid rounded-lg px-4 py-3 text-[14px] font-inter outline-none focus:border-black transition-all" />
+                  <input type="tel" required placeholder="0711 106 949" value={formState.phone} onChange={(e) => setFormState((prev) => ({ ...prev, phone: e.target.value }))} className="w-full bg-white border border-grey-mid rounded-lg px-4 py-3 text-[14px] font-inter outline-none focus:border-black transition-all" />
                 </div>
               </div>
             </section>

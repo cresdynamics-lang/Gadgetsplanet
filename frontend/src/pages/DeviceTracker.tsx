@@ -77,7 +77,7 @@ const DeviceTracker = () => {
               type="tel"
               value={phone}
               onChange={(e) => setPhone(e.target.value)}
-              placeholder="+254 712 345 678"
+              placeholder="0711 106 949"
               className="w-full h-12 bg-grey-light border border-grey-mid rounded-xl px-4 font-jost text-[14px] outline-none focus:border-cta/50"
             />
           </div>
@@ -87,7 +87,7 @@ const DeviceTracker = () => {
             {loading ? 'Searching...' : 'Track Device'}
           </button>
           <p className="font-jost text-[12px] text-grey-text text-center">
-            Demo ticket: <button type="button" onClick={() => { setTicketNumber('GPH-482910'); setPhone('254712345678'); }} className="text-cta font-semibold hover:underline">GPH-482910</button>
+            Demo ticket: <button type="button" onClick={() => { setTicketNumber('GPH-482910'); setPhone('254711106949'); }} className="text-cta font-semibold hover:underline">GPH-482910</button>
           </p>
         </form>
 

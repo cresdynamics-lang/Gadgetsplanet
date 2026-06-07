@@ -16,11 +16,11 @@ const Footer = () => {
               </div>
               <div>
                 <span className="block font-bodoni text-[17px] font-bold leading-none tracking-tight text-white">Gadgets Planet</span>
-                <span className="block font-jost text-[9px] font-bold uppercase tracking-[0.25em] text-cta">Hub</span>
+                <span className="block font-jost text-[8px] font-bold uppercase tracking-[0.12em] text-cta leading-tight">Your Phone Garage</span>
               </div>
             </Link>
             <p className="text-[13px] text-white/50 leading-relaxed font-jost">
-              Premium laptop & phone sales and repair in {BUSINESS.address.city}, Kenya. Serving {BUSINESS.serviceArea}.
+              {BUSINESS.slogan}. {BUSINESS.tagline}. Serving {BUSINESS.serviceArea}.
             </p>
             <div className="space-y-2 font-jost text-[12px] text-white/40">
               <p className="flex items-start gap-2"><MapPin className="w-3.5 h-3.5 text-cta shrink-0 mt-0.5" />{BUSINESS.address.full}</p>
@@ -86,7 +86,7 @@ const Footer = () => {
           <p className="text-[12px] font-jost text-white/30 text-center md:text-left">
             © 2026 {BUSINESS.name}. {BUSINESS.address.city}, Kenya. All rights reserved.
           </p>
-          <p className="text-[11px] font-jost text-white/20">No Fix, No Fee · Certified Technicians · 100% Genuine Products</p>
+          <p className="text-[11px] font-jost text-white/20">{BUSINESS.slogan} · {BUSINESS.tagline}</p>
         </div>
       </div>
     </footer>

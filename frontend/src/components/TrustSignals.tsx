@@ -1,4 +1,5 @@
 import { Truck, ShieldCheck, Headphones, CreditCard, Award } from 'lucide-react';
+import { BUSINESS } from '../lib/business';
 
 const signals = [
   { icon: Truck, title: 'Free Shipping', desc: 'On orders over KSh 50,000', color: 'from-blue-500 to-cyan-500' },
@@ -32,7 +33,7 @@ const TrustSignals = () => {
         <div className="mt-4 flex flex-wrap items-center justify-center gap-6 py-4 px-6 rounded-2xl bg-primary text-white">
           <div className="flex items-center gap-2">
             <Award className="w-5 h-5 text-cta" />
-            <span className="font-jost text-[13px] font-semibold">Kenya's #1 Tech Retailer</span>
+            <span className="font-jost text-[13px] font-semibold">{BUSINESS.slogan} · {BUSINESS.address.city}</span>
           </div>
           <div className="hidden sm:block w-px h-4 bg-white/20" />
           <span className="font-jost text-[12px] text-white/60">Trusted by 10,000+ customers nationwide</span>

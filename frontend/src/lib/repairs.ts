@@ -79,7 +79,7 @@ function getDemoTickets(): RepairTicket[] {
       id: 'demo-1',
       ticketNumber: 'GPH-482910',
       customerName: 'James M.',
-      customerPhone: '254712345678',
+      customerPhone: '254711106949',
       customerEmail: 'demo@gadgetsplanethub.com',
       deviceType: 'Phone',
       deviceModel: 'iPhone 14 Pro',

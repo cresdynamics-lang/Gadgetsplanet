@@ -1,5 +1,7 @@
 import { Link } from 'react-router-dom';
-import { MapPin, Phone, Mail, Clock, Send, MessageCircle } from 'lucide-react';
+import { MapPin, Phone, Mail, Clock, Send } from 'lucide-react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faWhatsapp } from '@fortawesome/free-brands-svg-icons';
 import { BUSINESS, whatsappUrl } from '../lib/business';
 
 const Contact = () => {
@@ -7,17 +9,17 @@ const Contact = () => {
     <div className="bg-background pb-24">
       <div className="hero-mesh py-16 md:py-20">
         <div className="container">
-          <p className="section-eyebrow text-cta">Visit Us in Kitengela</p>
+          <p className="section-eyebrow text-cta">{BUSINESS.slogan}</p>
           <h1 className="font-bodoni text-4xl md:text-5xl font-bold text-white leading-tight">Contact & Location</h1>
           <p className="font-jost text-white/50 mt-3 max-w-xl text-[15px]">
-            Premium laptop and phone sales & repair services in {BUSINESS.address.city}, Kenya. Drop off your device or get an instant quote.
+            {BUSINESS.tagline}. Visit us in {BUSINESS.address.city}, Kenya — sales, repairs, spares & accessories.
           </p>
           <div className="flex flex-wrap gap-3 mt-6">
-            <a href={whatsappUrl(`Hi! I'd like to visit ${BUSINESS.name} in ${BUSINESS.address.city}.`)} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 bg-[#25D366] text-white px-5 py-3 rounded-2xl font-jost text-[13px] font-bold hover:opacity-90 transition-all">
-              <MessageCircle className="w-4 h-4" /> WhatsApp Us
+            <a href={whatsappUrl(`Hi ${BUSINESS.name}! I'd like to enquire about phones, laptops or repairs.`)} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 bg-[#25D366] text-white px-5 py-3 rounded-2xl font-jost text-[13px] font-bold hover:opacity-90 transition-all">
+              <FontAwesomeIcon icon={faWhatsapp} className="w-4 h-4" /> WhatsApp Us
             </a>
             <a href={`tel:${BUSINESS.phoneRaw}`} className="inline-flex items-center gap-2 bg-white text-primary px-5 py-3 rounded-2xl font-jost text-[13px] font-bold hover:bg-cta hover:text-white transition-all">
-              <Phone className="w-4 h-4" /> Call Now
+              <Phone className="w-4 h-4" /> {BUSINESS.phone}
             </a>
             <Link to="/book-repair" className="inline-flex items-center gap-2 border border-white/20 text-white px-5 py-3 rounded-2xl font-jost text-[13px] font-semibold hover:bg-white/10 transition-all">
               Drop Off in {BUSINESS.address.city}
@@ -32,8 +34,8 @@ const Contact = () => {
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {[
                 { icon: MapPin, title: 'Visit Us', content: <>{BUSINESS.address.street}<br />{BUSINESS.address.city}, {BUSINESS.address.country}</> },
-                { icon: Phone, title: 'Call Us', content: <>{BUSINESS.phone}<br />Mon – Sun</> },
-                { icon: Mail, title: 'Email', content: <>{BUSINESS.email}<br />{BUSINESS.supportEmail}</> },
+                { icon: Phone, title: 'Call / WhatsApp', content: <>{BUSINESS.phone}<br />{BUSINESS.phoneDisplay}</> },
+                { icon: Mail, title: 'Email', content: <>{BUSINESS.email}</> },
                 { icon: Clock, title: 'Hours', content: <>{BUSINESS.hours.weekdays}<br />{BUSINESS.hours.weekend}</> },
               ].map((item) => (
                 <div key={item.title} className="bg-white border border-grey-mid/60 rounded-2xl p-5 space-y-3 shadow-card">
