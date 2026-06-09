@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import ProductImage from './ProductImage';
 
 const FeaturedSections = () => {
   return (
@@ -23,11 +24,14 @@ const FeaturedSections = () => {
             </div>
           </div>
           
-          <img 
-            src="/iphone 12 purple.jpg" 
-            alt="Exclusive Tech" 
-            className="absolute bottom-0 right-0 w-2/3 object-contain group-hover:scale-110 transition-transform duration-700"
-          />
+          <div className="absolute bottom-0 right-0 w-1/2 h-full flex items-end justify-end p-4 pointer-events-none">
+            <ProductImage
+              src="/iphone 12 purple.jpg"
+              alt="Exclusive Tech"
+              className="w-full h-full max-h-[280px]"
+              frameClassName="bg-transparent"
+            />
+          </div>
         </motion.div>
 
         {/* Right: Category Grid */}
@@ -42,7 +46,7 @@ const FeaturedSections = () => {
                   See All <i className="fa-solid fa-arrow-right text-[10px]"></i>
                 </button>
               </div>
-              <img src="/iphone xr blue.jpg" alt="Headphone" className="w-24 h-24 object-contain group-hover:rotate-12 transition-transform" />
+              <ProductImage src="/iphone xr blue.jpg" alt="Headphone" className="w-24 h-24 shrink-0" frameClassName="bg-transparent" imgClassName="group-hover:rotate-12 transition-transform" />
             </div>
             
             <div className="bg-[#E0F2FE] rounded-3xl p-8 flex items-center justify-between group cursor-pointer hover:shadow-xl transition-all">
@@ -53,7 +57,7 @@ const FeaturedSections = () => {
                   See All <i className="fa-solid fa-arrow-right text-[10px]"></i>
                 </button>
               </div>
-              <img src="/iphone 13 pro blue.jpg" alt="Airdopes" className="w-24 h-24 object-contain group-hover:scale-110 transition-transform" />
+              <ProductImage src="/iphone 13 pro blue.jpg" alt="Airdopes" className="w-24 h-24 shrink-0" frameClassName="bg-transparent" imgClassName="group-hover:scale-110 transition-transform" />
             </div>
           </div>
 
@@ -66,7 +70,7 @@ const FeaturedSections = () => {
                   See All <i className="fa-solid fa-arrow-right text-[10px]"></i>
                 </button>
               </div>
-              <img src="/iphone 14 purple.jpg" alt="Speaker" className="w-24 h-24 object-contain group-hover:-rotate-12 transition-transform" />
+              <ProductImage src="/iphone 14 purple.jpg" alt="Speaker" className="w-24 h-24 shrink-0" frameClassName="bg-transparent" imgClassName="group-hover:-rotate-12 transition-transform" />
             </div>
             
             <div className="bg-[#FEE2E2] rounded-3xl p-8 flex items-center justify-between group cursor-pointer hover:shadow-xl transition-all">
@@ -77,7 +81,7 @@ const FeaturedSections = () => {
                   See All <i className="fa-solid fa-arrow-right text-[10px]"></i>
                 </button>
               </div>
-              <img src="/iphone 15 pro blue titanium.jpg" alt="Camera" className="w-24 h-24 object-contain group-hover:scale-110 transition-transform" />
+              <ProductImage src="/iphone 15 pro blue titanium.jpg" alt="Camera" className="w-24 h-24 shrink-0" frameClassName="bg-transparent" imgClassName="group-hover:scale-110 transition-transform" />
             </div>
           </div>
         </div>
@@ -89,11 +93,12 @@ const FeaturedSections = () => {
           viewport={{ once: true }}
           className="lg:col-span-12 bg-white border border-primary/5 rounded-[40px] p-12 grid grid-cols-1 lg:grid-cols-2 items-center gap-12 group overflow-hidden"
         >
-          <div className="order-2 lg:order-1 flex justify-center">
-            <img 
-              src="/iphone 16 pro max.jpg" 
-              alt="Featured Product" 
-              className="w-full max-w-[400px] object-contain group-hover:scale-105 transition-transform duration-700"
+          <div className="order-2 lg:order-1 flex justify-center min-h-[280px]">
+            <ProductImage
+              src="/iphone 16 pro max.jpg"
+              alt="Featured Product"
+              className="w-full max-w-[400px] h-full"
+              frameClassName="bg-transparent"
             />
           </div>
           <div className="space-y-6 order-1 lg:order-2">

@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { useCart } from '../context/CartContext';
 import { Heart, Star, ShoppingCart } from 'lucide-react';
+import ProductImage from './ProductImage';
 
 interface ProductCardProps {
   product: {
@@ -26,12 +27,8 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
 
   return (
     <div className="product-card group bg-white border border-grey-mid/60 rounded-2xl overflow-hidden flex flex-col relative transition-all duration-300 hover:shadow-card-hover hover:-translate-y-1 hover:border-cta/20">
-      <Link to={`/product/${product.id}`} className="block relative aspect-square bg-gradient-to-b from-grey-light to-white p-5 overflow-hidden">
-        <img
-          src={product.img}
-          alt={product.name}
-          className="w-full h-full object-contain transition-transform duration-500 group-hover:scale-105"
-        />
+      <Link to={`/product/${product.id}`} className="block relative aspect-square product-img-frame">
+        <ProductImage src={product.img} alt={product.name} className="w-full h-full" />
 
         <div className="absolute top-3 left-3 flex flex-col gap-1.5 z-10">
           {product.isNew && (

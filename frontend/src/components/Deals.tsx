@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import ProductImage from './ProductImage';
 
 const products = [
   { id: 1, name: 'iPhone 15 Pro Blue', price: 999.00, oldPrice: 1099.00, img: '/iphone 15 pro blue titanium.jpg', rating: 5 },
@@ -40,12 +41,8 @@ const Deals = () => {
                 SALE
               </div>
               
-              <div className="aspect-square mb-6 overflow-hidden rounded-2xl bg-white/50">
-                <img 
-                  src={product.img} 
-                  alt={product.name} 
-                  className="w-full h-full object-contain group-hover:scale-110 transition-transform duration-500" 
-                />
+              <div className="aspect-square mb-6 product-img-frame rounded-2xl">
+                <ProductImage src={product.img} alt={product.name} className="w-full h-full" />
               </div>
 
               <div className="space-y-2">

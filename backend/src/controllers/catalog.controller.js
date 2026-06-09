@@ -64,7 +64,7 @@ const generateOrderNumber = () => {
 
 export const createOrder = async (req, res, next) => {
   try {
-    const { customerName, customerEmail, customerPhone, deliveryAddress, paymentMethod, items } = req.body;
+    const { customerName, customerEmail, customerPhone, deliveryAddress, deliveryLocation, customerMessage, paymentMethod, items } = req.body;
 
     if (!customerName || !customerEmail || !customerPhone || !deliveryAddress || !paymentMethod) {
       return res.status(400).json({ message: "Missing required checkout details" });
@@ -105,13 +105,21 @@ export const createOrder = async (req, res, next) => {
         ? "UNPAID"
         : "PAID";
 
+    const fullDeliveryAddress = [
+      deliveryAddress,
+      deliveryLocation ? `Location: ${deliveryLocation}` : null,
+    ]
+      .filter(Boolean)
+      .join(" | ");
+
     const order = await prisma.order.create({
       data: {
         orderNumber: generateOrderNumber(),
         customerName,
         customerEmail,
         customerPhone,
-        deliveryAddress,
+        deliveryAddress: fullDeliveryAddress,
+        internalNotes: customerMessage?.trim() || null,
         paymentMethod,
         paymentStatus,
         subtotal,

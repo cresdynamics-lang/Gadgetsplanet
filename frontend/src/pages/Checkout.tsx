@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import { useCart } from '../context/CartContext';
 import { ShieldCheck, Lock, CreditCard, Smartphone, Wallet, ChevronRight, Loader2 } from 'lucide-react';
+import ProductImage from '../components/ProductImage';
 
 const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || "http://localhost:5000";
 
@@ -16,6 +17,8 @@ const Checkout = () => {
     email: "",
     address: "",
     city: "",
+    location: "",
+    message: "",
     phone: "",
     paymentMethod: "mpesa",
   });
@@ -36,6 +39,8 @@ const Checkout = () => {
           customerEmail: formState.email,
           customerPhone: formState.phone,
           deliveryAddress: `${formState.address}, ${formState.city}`,
+          deliveryLocation: formState.location,
+          customerMessage: formState.message,
           paymentMethod: formState.paymentMethod,
           items: cart.map((item) => ({
             productId: Number(item.id),
@@ -117,15 +122,29 @@ const Checkout = () => {
                 </div>
                 <div className="space-y-2 md:col-span-2">
                   <label className="text-[13px] font-bold text-black font-poppins">Street Address</label>
-                  <input type="text" required placeholder="Accra Plaza, Nairobi CBD" value={formState.address} onChange={(e) => setFormState((prev) => ({ ...prev, address: e.target.value }))} className="w-full bg-white border border-grey-mid rounded-lg px-4 py-3 text-[14px] font-inter outline-none focus:border-black transition-all" />
+                  <input type="text" required placeholder="Building, street, estate..." value={formState.address} onChange={(e) => setFormState((prev) => ({ ...prev, address: e.target.value }))} className="w-full bg-white border border-grey-mid rounded-lg px-4 py-3 text-[14px] font-inter outline-none focus:border-black transition-all" />
                 </div>
                 <div className="space-y-2">
                   <label className="text-[13px] font-bold text-black font-poppins">City</label>
                   <input type="text" required placeholder="Nairobi" value={formState.city} onChange={(e) => setFormState((prev) => ({ ...prev, city: e.target.value }))} className="w-full bg-white border border-grey-mid rounded-lg px-4 py-3 text-[14px] font-inter outline-none focus:border-black transition-all" />
                 </div>
                 <div className="space-y-2">
+                  <label className="text-[13px] font-bold text-black font-poppins">Delivery Location</label>
+                  <input type="text" required placeholder="e.g. Westlands, CBD, Eastleigh, Karen" value={formState.location} onChange={(e) => setFormState((prev) => ({ ...prev, location: e.target.value }))} className="w-full bg-white border border-grey-mid rounded-lg px-4 py-3 text-[14px] font-inter outline-none focus:border-black transition-all" />
+                </div>
+                <div className="space-y-2 md:col-span-2">
                   <label className="text-[13px] font-bold text-black font-poppins">Phone Number</label>
                   <input type="tel" required placeholder="0711 106 949" value={formState.phone} onChange={(e) => setFormState((prev) => ({ ...prev, phone: e.target.value }))} className="w-full bg-white border border-grey-mid rounded-lg px-4 py-3 text-[14px] font-inter outline-none focus:border-black transition-all" />
+                </div>
+                <div className="space-y-2 md:col-span-2">
+                  <label className="text-[13px] font-bold text-black font-poppins">Message <span className="font-normal text-grey-text">(optional)</span></label>
+                  <textarea
+                    rows={4}
+                    placeholder="Delivery instructions, preferred time, landmark, or any special notes..."
+                    value={formState.message}
+                    onChange={(e) => setFormState((prev) => ({ ...prev, message: e.target.value }))}
+                    className="w-full bg-white border border-grey-mid rounded-lg px-4 py-3 text-[14px] font-inter outline-none focus:border-black transition-all resize-none"
+                  />
                 </div>
               </div>
             </section>
@@ -175,8 +194,8 @@ const Checkout = () => {
               <div className="space-y-6 max-h-[280px] overflow-y-auto pr-2 scrollbar-thin scrollbar-thumb-grey-mid">
                 {cart.map(item => (
                   <div key={item.id} className="flex gap-4">
-                    <div className="w-16 h-20 bg-grey-light rounded-lg border border-grey-mid shrink-0 overflow-hidden">
-                      <img src={item.image} alt={item.name} className="w-full h-full object-cover" />
+                    <div className="w-16 h-20 thumb-img-frame rounded-lg border border-grey-mid shrink-0">
+                      <ProductImage src={item.image} alt={item.name} className="w-full h-full" />
                     </div>
                     <div className="flex-grow flex flex-col justify-center">
                       <h4 className="text-[14px] font-bold text-black line-clamp-1">{item.name}</h4>

@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { useCart } from '../context/CartContext';
+import ProductImage from '../components/ProductImage';
 import { Trash2, Minus, Plus, ChevronRight, ShieldCheck, ShoppingBag } from 'lucide-react';
 
 const Cart = () => {
@@ -61,12 +62,8 @@ const Cart = () => {
                     <tr key={item.id} className="group hover:bg-grey-light/30 transition-colors">
                       <td className="px-6 py-6">
                         <div className="flex gap-4">
-                          <div className="w-20 h-24 bg-grey-light rounded-lg overflow-hidden border border-grey-mid shrink-0">
-                            <img 
-                              src={item.image} 
-                              alt={item.name} 
-                              className="w-full h-full object-cover" 
-                            />
+                          <div className="w-20 h-24 thumb-img-frame rounded-lg border border-grey-mid shrink-0">
+                            <ProductImage src={item.image} alt={item.name} className="w-full h-full" />
                           </div>
                           <div className="flex flex-col justify-between py-1">
                             <div>

@@ -41,9 +41,11 @@ const Footer = () => {
             <ul className="space-y-3 font-jost text-[13px]">
               {[
                 { to: '/shop', label: 'Device Catalog' },
-                { to: '/category/phones', label: 'Phones' },
-                { to: '/category/laptops', label: 'Laptops' },
-                { to: '/category/accessories', label: 'Accessories' },
+                { to: '/category/phones', label: 'Phones (iPhone & Samsung)' },
+                { to: '/category/tablets', label: 'Tablets' },
+                { to: '/category/laptops', label: 'Laptops & MacBooks' },
+                { to: '/category/earphones', label: 'Earphones & Earbuds' },
+                { to: '/category/accessories', label: 'Accessories & Spares' },
               ].map((link) => (
                 <li key={link.to}>
                   <Link to={link.to} className="text-white/50 hover:text-white transition-colors flex items-center gap-1 group">

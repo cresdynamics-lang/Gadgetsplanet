@@ -30,10 +30,16 @@ export const ALL_PRODUCTS: Product[] = [
   { id: 'p10', name: 'iPhone SE White', price: 45000, img: '/iphone SE (2nd Gen) white.jpg', category: 'Phones', brand: 'Apple', spec: '64GB / 3GB RAM', ram: '3GB', processor: 'A13 Bionic', warranty: '3-Month Store Warranty', rating: 4, reviewsCount: 95 },
   { id: 'p11', name: 'iPhone XR Blue', price: 35000, img: '/iphone xr blue.jpg', category: 'Phones', brand: 'Apple', spec: '64GB / 3GB RAM', ram: '3GB', processor: 'A12 Bionic', warranty: '3-Month Store Warranty', rating: 4, reviewsCount: 150 },
   { id: 'p12', name: 'iPhone 11 Black', price: 55000, img: '/iphone 11 black.jpg', category: 'Phones', brand: 'Apple', spec: '64GB / 4GB RAM', ram: '4GB', processor: 'A13 Bionic', warranty: '6-Month Store Warranty', rating: 4, reviewsCount: 220 },
+  { id: 'p13', name: 'Samsung Galaxy S24 Ultra', price: 165000, img: '/iphone 16 pro max.jpg', category: 'Phones', brand: 'Samsung', spec: '256GB / 12GB RAM', ram: '12GB', processor: 'Snapdragon 8 Gen 3', warranty: '1-Year Official Warranty', rating: 5, reviewsCount: 89 },
+  { id: 'p14', name: 'iPad Pro M4', price: 145000, img: '/iphone 14 pro max purple.jpg', category: 'Tablets', brand: 'Apple', spec: 'M4 / 11" / 256GB', ram: '8GB', processor: 'Apple M4', warranty: '1-Year Official Warranty', rating: 5, reviewsCount: 67, isNew: true },
+  { id: 'p15', name: 'AirPods Pro (2nd Gen)', price: 28000, img: '/iphone 13 pro blue.jpg', category: 'Earphones', brand: 'Apple', spec: 'Active Noise Cancellation', ram: 'N/A', processor: 'H2 Chip', warranty: '6-Month Store Warranty', rating: 5, reviewsCount: 156 },
+  { id: 'p16', name: 'Samsung Galaxy Buds2 Pro', price: 18000, img: '/iphone 16 pro blue.jpg', category: 'Earphones', brand: 'Samsung', spec: 'Wireless earbuds / ANC', ram: 'N/A', processor: 'N/A', warranty: '6-Month Store Warranty', rating: 4, reviewsCount: 72 },
+  { id: 'p17', name: '20W USB-C Fast Charger', price: 3500, img: '/iphone 15 black.jpg', category: 'Accessories', brand: 'Apple', spec: 'Original spec / USB-C', ram: 'N/A', processor: 'N/A', warranty: '3-Month Store Warranty', rating: 4, reviewsCount: 210 },
+  { id: 'p18', name: 'iPhone 15 Silicone Case', price: 4500, img: '/iphone 15 pro blue titanium.jpg', category: 'Accessories', brand: 'Apple', spec: 'MagSafe compatible', ram: 'N/A', processor: 'N/A', warranty: '3-Month Store Warranty', rating: 4, reviewsCount: 88 },
 ];
 
 export const RAM_OPTIONS = ['All', '3GB', '4GB', '6GB', '8GB', '12GB', '16GB', '32GB'];
-export const PROCESSOR_OPTIONS = ['All', 'Apple M5', 'Intel i5', 'Intel i7', 'A19 Pro', 'A18 Pro', 'A17 Pro', 'A16 Bionic', 'A15 Bionic', 'A14 Bionic', 'A13 Bionic', 'A12 Bionic'];
+export const PROCESSOR_OPTIONS = ['All', 'Apple M5', 'Apple M4', 'Intel i5', 'Intel i7', 'Snapdragon 8 Gen 3', 'A19 Pro', 'A18 Pro', 'A17 Pro', 'A16 Bionic', 'A15 Bionic', 'A14 Bionic', 'A13 Bionic', 'A12 Bionic', 'H2 Chip', 'N/A'];
 
 export function searchProducts(query: string, products = ALL_PRODUCTS) {
   const q = query.trim().toLowerCase();

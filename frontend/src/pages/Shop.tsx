@@ -3,6 +3,7 @@ import { Link, useSearchParams } from 'react-router-dom';
 import ProductCard from '../components/ProductCard';
 import { Filter, ChevronDown, Search, X } from 'lucide-react';
 import { ALL_PRODUCTS, RAM_OPTIONS, PROCESSOR_OPTIONS, filterProducts } from '../lib/products';
+import { STORE_CATEGORIES } from '../lib/categories';
 
 const Shop = () => {
   const [searchParams, setSearchParams] = useSearchParams();
@@ -81,7 +82,7 @@ const Shop = () => {
             </div>
             <h1 className="section-title">Device Catalog</h1>
             <p className="font-jost text-[14px] text-secondary max-w-xl">
-              Browse premium phones and laptops with official warranty badges. Filter by brand, RAM, and processor.
+              Browse high-end phones, tablets, laptops, earphones & accessories. iPhone, Samsung, MacBook & more.
             </p>
 
             {/* In-page search */}
@@ -125,7 +126,7 @@ const Shop = () => {
 
               <div className="space-y-3">
                 <h4 className="text-[12px] font-jost font-bold text-grey-text uppercase tracking-wider">Category</h4>
-                {['All', 'Phones', 'Laptops', 'Tablets', 'Accessories'].map((cat) => (
+                {['All', ...STORE_CATEGORIES.map((c) => c.name)].map((cat) => (
                   <label key={cat} className="flex items-center gap-3 cursor-pointer group">
                     <input type="radio" name="category" checked={category === cat} onChange={() => setCategory(cat)} className="w-4 h-4 accent-cta" />
                     <span className={`text-[13px] font-jost ${category === cat ? 'text-primary font-semibold' : 'text-grey-text group-hover:text-primary'}`}>{cat}</span>

@@ -1,9 +1,9 @@
 export const BUSINESS = {
   name: 'Gadgets Planet Hub',
   slogan: "Your Everyday's Phone Garage",
-  tagline: 'Dealers in smartphones, iPhones, laptops, MacBooks, repairs, spares & accessories',
+  tagline: 'High-end phones, tablets, laptops & MacBooks — repairs, spares, earphones & accessories',
   description:
-    "Gadgets Planet Hub — your everyday's phone garage. Dealers in smartphones, iPhones, laptops, MacBooks, repairs, spares and accessories at Accra Plaza, Nairobi CBD, Kenya.",
+    "Gadgets Planet Hub — your everyday's phone garage. Dealers in smartphones, iPhones, Samsung, tablets, laptops, MacBooks, repairs, spares, earphones and accessories at Accra Plaza, Nairobi CBD, Kenya.",
   phone: '0711 106 949',
   phoneDisplay: '+254 711 106 949',
   phoneRaw: '254711106949',

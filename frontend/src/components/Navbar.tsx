@@ -52,9 +52,11 @@ const Navbar = () => {
   const navLinks = [
     { name: 'Shop', path: '/shop' },
     { name: 'Phones', path: '/category/phones' },
+    { name: 'Tablets', path: '/category/tablets' },
     { name: 'Laptops', path: '/category/laptops' },
+    { name: 'Earphones', path: '/category/earphones' },
+    { name: 'Accessories', path: '/category/accessories' },
     { name: 'Repairs', path: '/repairs' },
-    { name: 'Track Repair', path: '/track-repair' },
     { name: 'Contact', path: '/contact' },
   ];
 
@@ -64,7 +66,7 @@ const Navbar = () => {
         <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-grey-text pointer-events-none" />
         <input
           type="search"
-          placeholder="Search phones, laptops..."
+          placeholder="Search iPhones, Samsung, laptops, earphones..."
           className="w-full h-11 bg-grey-light/80 border border-grey-mid/80 rounded-2xl pl-11 pr-4 font-jost text-[13px] outline-none focus:border-cta/50 focus:bg-white focus:ring-2 focus:ring-cta/10 transition-all placeholder:text-grey-text/60"
           value={searchQuery}
           onChange={(e) => setSearchQuery(e.target.value)}
@@ -89,7 +91,7 @@ const Navbar = () => {
             <span className="text-white/90">{BUSINESS.slogan}</span>
           </div>
           <p className="flex-1 text-center text-[11px] font-jost font-medium tracking-wide text-white/80 sm:flex-none">
-            Smartphones · iPhones · Laptops · MacBooks · Repairs · Spares
+            Smartphones · iPhones · Samsung · Laptops · Repairs · Accessories
           </p>
           <div className="hidden sm:flex items-center gap-4">
             {isAuthenticated ? (

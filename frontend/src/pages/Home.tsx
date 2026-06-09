@@ -10,6 +10,7 @@ import ProductCard from '../components/ProductCard';
 import { Link } from 'react-router-dom';
 import { ArrowRight, Star, Wrench } from 'lucide-react';
 import { BUSINESS } from '../lib/business';
+import ProductImage from '../components/ProductImage';
 
 const Home = () => {
   const laptopDeals = [
@@ -114,11 +115,11 @@ const Home = () => {
         variants={sectionVariants}
         className="container"
       >
-        <div className="relative w-full min-h-[320px] md:min-h-[400px] rounded-3xl overflow-hidden group">
+        <div className="relative w-full min-h-[360px] md:min-h-[420px] rounded-3xl overflow-hidden group grid grid-cols-1 md:grid-cols-2">
           <div className="absolute inset-0 hero-mesh" />
-          <div className="absolute inset-0 bg-gradient-to-r from-primary via-primary/90 to-transparent z-10" />
+          <div className="absolute inset-0 bg-gradient-to-r from-primary via-primary/95 to-primary/40 z-10 md:col-span-2" />
 
-          <div className="relative z-20 p-10 md:p-16 flex flex-col justify-center max-w-xl space-y-6">
+          <div className="relative z-20 p-10 md:p-16 flex flex-col justify-center space-y-6">
             <div className="inline-flex items-center gap-2 w-fit rounded-full border border-white/10 bg-white/5 px-4 py-1.5">
               <Star className="w-3.5 h-3.5 text-accent-yellow fill-accent-yellow" />
               <span className="font-jost text-[11px] font-bold text-white/70 uppercase tracking-wider">{BUSINESS.slogan}</span>
@@ -139,11 +140,14 @@ const Home = () => {
             </Link>
           </div>
 
-          <img
-            src="/iphone 17 pro max.jpg"
-            alt="Featured product"
-            className="absolute right-[-60px] md:right-0 bottom-[-80px] md:bottom-[-60px] h-[110%] md:h-[130%] object-contain z-0 opacity-40 md:opacity-70 group-hover:opacity-90 transition-opacity duration-700 pointer-events-none"
-          />
+          <div className="relative z-20 hidden md:flex items-center justify-center p-8 md:p-12">
+            <ProductImage
+              src="/iphone 17 pro max.jpg"
+              alt="Featured product"
+              className="w-full h-full max-h-[360px]"
+              frameClassName="bg-transparent"
+            />
+          </div>
         </div>
       </motion.section>
 

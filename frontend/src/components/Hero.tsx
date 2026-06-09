@@ -4,6 +4,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowRight, ChevronLeft, ChevronRight, Trophy, Zap } from 'lucide-react';
 import { Button } from './ui/Button';
 import { BUSINESS } from '../lib/business';
+import ProductImage from './ProductImage';
 
 const slides = [
   {
@@ -118,9 +119,10 @@ const Hero = () => {
                 {/* Quick stats */}
                 <div className="flex flex-wrap gap-6 pt-4 border-t border-white/10">
                   {[
-                    { value: 'iPhones', label: 'Smartphones' },
+                    { value: 'iPhone', label: 'Apple Phones' },
+                    { value: 'Samsung', label: 'Samsung' },
                     { value: 'MacBooks', label: 'Laptops' },
-                    { value: 'Repairs', label: 'Spares & More' },
+                    { value: 'Repairs', label: 'Fix & Restore' },
                   ].map((stat) => (
                     <div key={stat.label}>
                       <p className="font-bodoni text-2xl font-bold text-white">{stat.value}</p>
@@ -132,7 +134,7 @@ const Hero = () => {
             </div>
 
             {/* Product visual */}
-            <div className="w-full lg:w-[48%] h-[340px] sm:h-[420px] lg:h-full relative flex items-center justify-center">
+            <div className="w-full lg:w-[48%] min-h-[340px] sm:min-h-[420px] lg:min-h-[500px] relative flex items-center justify-center p-6 md:p-10">
               <motion.div
                 initial={{ opacity: 0, scale: 0.85, y: 30 }}
                 animate={{ opacity: 1, scale: 1, y: 0 }}
@@ -140,11 +142,11 @@ const Hero = () => {
                 className="relative w-full h-full flex items-center justify-center"
               >
                 <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[280px] h-[280px] md:w-[500px] md:h-[500px] bg-cta/20 blur-[100px] rounded-full animate-float" />
-                <div className="absolute inset-4 rounded-3xl border border-white/5 bg-white/[0.02] backdrop-blur-sm" />
-                <img
+                <ProductImage
                   src={slides[current].img}
                   alt={slides[current].title}
-                  className="relative z-10 max-w-[95%] max-h-[85%] object-contain drop-shadow-[0_40px_80px_rgba(99,102,241,0.4)] select-none"
+                  className="relative z-10 w-full h-full max-h-[min(70vh,520px)]"
+                  frameClassName="bg-transparent"
                 />
               </motion.div>
             </div>
